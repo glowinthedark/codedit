@@ -290,16 +290,9 @@
         };
 
         var themeEl = document.getElementById("customTheme");
-
         var themeFromUrl = (location.hash && location.hash.slice(1)) || (document.location.search && decodeURIComponent(document.location.search.slice(1)));
-
-        // if (themeFromUrl) {
-
-        // }
-
         var savedTheme = themeFromUrl || getCookie("theme") || DEFAULT_THEME;
-        themeEl.value = themeFromUrl;
-        // editor.setOption("theme", themeFromUrl);
+        themeEl.value = savedTheme;
 
         var editor = CodeMirror.fromTextArea(document.getElementById('edit'), {
             lineNumbers: true,
