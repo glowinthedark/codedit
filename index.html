@@ -315,6 +315,8 @@
             styleSelectedText: true
         });
 
+        editor.setOption("theme", savedTheme);
+
         CodeMirror.commands["selectAll"](editor);
 
         function getSelectedRange() {
