@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/clike/clike.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/go/go.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/css/css.min.js"></script>
@@ -168,6 +169,13 @@
         <option>Javascript</option>
         <option>CSS</option>
         <option>XML</option>
+        <option>Shell</option>
+        <option>Markdown</option>
+        <option>Python</option>
+        <option>Java</option>
+        <option>Groovy</option>
+        <option>SQLite</option>
+        <option>YAML</option>
     </select>
     Theme: <select onchange="selectTheme()" id="customTheme">
         <option selected>default</option>
@@ -227,7 +235,7 @@
         <!-- <option>the-matrix</option> -->
         <option>tomorrow-night-bright</option>
         <!-- <option>tomorrow-night-eighties</option> -->
-        <option>ttcn</option>
+<!--        <option>ttcn</option>-->
         <option>twilight</option>
         <!-- <option>vibrant-ink</option> -->
         <!-- <option>xq-dark</option> -->
@@ -302,6 +310,7 @@
             autoCloseTags: true,
             showHint: true,
             theme: savedTheme,
+            indentUnit: 4,
             matchTags: { bothTags: true },
             hintOptions: {
                 completeSingle: false,
@@ -336,7 +345,13 @@
                 'Golang': 'text/x-go',
                 'Javascript': 'text/javascript',
                 'CSS': 'text/css',
-                'HTML': 'text/html'
+                'HTML': 'text/html',
+                'Markdown': 'text/x-markdown',
+                'Python': 'text/x-python',
+                'Java': 'text/x-java',
+                'Groovy': 'text/x-groovy',
+                'SQLite': 'text/x-sqlite',
+                'YAML': 'text/x-yaml',
             };
 
             editor.setOption('mode', modes[optionText]);
@@ -351,7 +366,7 @@
 
         CodeMirror.on(window, "hashchange", function () {
             var theme = location.hash.slice(1);
-            if (theme) { input.value = theme; selectTheme(); }
+            if (theme) { themeEl.value = theme; selectTheme(); }
         });
     </script>
 </body>
