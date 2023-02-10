@@ -5,29 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeMirror Editor </title>
+    <title>Code Editor </title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/css/css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/codemirror.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/clike/clike.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/go/go.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/css/css.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/htmlmixed/htmlmixed.js"></script> -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/htmlembedded/htmlembedded.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/shell/shell.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/htmlembedded/htmlembedded.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/fold/xml-fold.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/xml-hint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/markdown/markdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/python/python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/sql/sql.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/yaml/yaml.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/fold/xml-fold.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/lint/yaml-lint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/yaml-frontmatter/yaml-frontmatter.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/fold/markdown-fold.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/fold/indent-fold.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/selection/selection-pointer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/selection/selection-pointer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/mode/vue/vue.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/edit/matchbrackets.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/fold/foldcode.min.js"></script>
@@ -42,97 +43,66 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/search/match-highlighter.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/scroll/simplescrollbars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/search/searchcursor.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/search/search.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/edit/closebrackets.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/edit/closetag.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/show-hint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/show-hint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/html-hint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/css-hint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/javascript-hint.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/display/fullscreen.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/comment/comment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/comment/continuecomment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/scroll/annotatescrollbar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.min.js"></script>
 
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/fold/foldgutter.min.css">
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/search/matchesonscrollbar.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/fold/foldgutter.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/search/matchesonscrollbar.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/dialog/dialog.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/show-hint.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/display/fullscreen.min.css">
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/scroll/simplescrollbars.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/display/fullscreen.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/scroll/simplescrollbars.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/addon/hint/show-hint.min.css">
 
 
     <!-- THEMES -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/3024-day.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/3024-night.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/abbott.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/abcdef.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/ambiance.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/ayu-dark.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/ayu-mirage.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/base16-dark.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/bespin.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/base16-light.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/blackboard.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/cobalt.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/colorforth.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/dracula.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/duotone-dark.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/duotone-light.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/eclipse.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/elegant.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/erlang-dark.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/ambiance.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/base16-dark.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/bespin.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/elegant.min.css"
+          media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/gruvbox-dark.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/hopscotch.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/icecoder.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/isotope.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/juejin.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/lesser-dark.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/liquibyte.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/lucario.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/material.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/material-darker.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/material-palenight.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/material-ocean.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/mbo.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/mdn-like.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/midnight.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/monokai.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/moxer.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/neat.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/neo.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/night.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/nord.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/oceanic-next.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/panda-syntax.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/paraiso-dark.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/paraiso-light.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/pastel-on-dark.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/railscasts.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/rubyblue.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/seti.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/shadowfox.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/solarized.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/the-matrix.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/lesser-dark.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/material.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/mbo.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/monokai.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/nord.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/oceanic-next.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/pastel-on-dark.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/railscasts.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/solarized.min.css"
+          media="print" onload="this.media='all'">
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/tomorrow-night-bright.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/tomorrow-night-eighties.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/ttcn.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/twilight.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/vibrant-ink.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/xq-dark.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/xq-light.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/yeti.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/idea.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/darcula.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/yonce.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/zenburn.css"> -->
+          href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/tomorrow-night-bright.min.css"
+          media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.56.0/theme/twilight.min.css"
+          media="print" onload="this.media='all'">
+
     <style>
         html,
         body {
@@ -152,7 +122,8 @@
         a,
         a:link,
         a:visited {
-            color: #4CAF50;
+            font-size: 8pt;
+            color: #8d8d8d;
             text-decoration: none !important;
             -webkit-transition: color 1s ease, background-color 1s ease;
             -moz-transition: color 1s ease, background-color 1s ease;
@@ -161,218 +132,243 @@
         }
 
         a:hover {
-            color: #05e92f;
+            color: #ff9100;
+        }
+
+        .btn {
+            margin: 2px;
+            padding: 3px;
+            background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+            background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+            background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+            background-image: -o-linear-gradient(top, #3498db, #2980b9);
+            background-image: linear-gradient(to bottom, #3498db, #2980b9);
+            -webkit-border-radius: 2;
+            -moz-border-radius: 2;
+            border-radius: 2px;
+            -webkit-box-shadow: 1px 1px 2px #999;
+            -moz-box-shadow: 1px 1px 1px #999;
+            box-shadow: 1px 1px 1px #999;
+            font-family: sans-serif;
+            background: #f4f7f9;
+            text-decoration: none;
+            letter-spacing: .11em;
+            border: 0;
         }
     </style>
 </head>
 
 <body>
-    <select onchange="select(this)">
-        <option>HTML</option>
-        <option>Golang</option>
-        <option>Javascript</option>
-        <option>CSS</option>
-        <option>XML</option>
-        <option>Shell</option>
-        <option>Markdown</option>
-        <option>Python</option>
-        <option>Java</option>
-        <option>Groovy</option>
-        <option>SQLite</option>
-        <option>YAML</option>
-    </select>
-    Theme: <select onchange="selectTheme()" id="customTheme">
-        <option selected>default</option>
-        <!-- <option>3024-day</option> -->
-        <!-- <option>3024-night</option> -->
-        <!-- <option>abbott</option> -->
-        <!-- <option>abcdef</option> -->
-        <option>ambiance</option>
-        <!-- <option>ayu-dark</option> -->
-        <!-- <option>ayu-mirage</option> -->
-        <option>base16-dark</option>
-        <!-- <option>base16-light</option> -->
-        <option>bespin</option>
-        <!-- <option>blackboard</option> -->
-        <!-- <option>cobalt</option> -->
-        <!-- <option>colorforth</option> -->
-        <!-- <option>darcula</option> -->
-        <!-- <option>dracula</option> -->
-        <!-- <option>duotone-dark</option> -->
-        <!-- <option>duotone-light</option> -->
-        <!-- <option>eclipse</option> -->
-        <option>elegant</option>
-        <!-- <option>erlang-dark</option> -->
-        <option>gruvbox-dark</option>
-        <!-- <option>hopscotch</option> -->
-        <!-- <option>icecoder</option> -->
-        <!-- <option>idea</option> -->
-        <!-- <option>isotope</option> -->
-        <!-- <option>juejin</option> -->
-        <option>lesser-dark</option>
-        <!-- <option>liquibyte</option> -->
-        <!-- <option>lucario</option> -->
-        <option>material</option>
-        <!-- <option>material-darker</option>
-        <option>material-palenight</option>
-        <option>material-ocean</option> -->
-        <option>mbo</option>
-        <!-- <option>mdn-like</option> -->
-        <!-- <option>midnight</option> -->
-        <option>monokai</option>
-        <!-- <option>moxer</option>
-        <option>neat</option>
-        <option>neo</option>
-        <option>night</option> -->
-        <option>nord</option>
-        <option>oceanic-next</option>
-        <!-- <option>panda-syntax</option> -->
-        <!-- <option>paraiso-dark</option>
-        <option>paraiso-light</option> -->
-        <option>pastel-on-dark</option>
-        <option>railscasts</option>
-        <!-- <option>rubyblue</option> -->
-        <option>seti</option>
-        <!-- <option>shadowfox</option> -->
-        <!-- <option>solarized dark</option> -->
-        <option>solarized light</option>
-        <!-- <option>the-matrix</option> -->
-        <option>tomorrow-night-bright</option>
-        <!-- <option>tomorrow-night-eighties</option> -->
-<!--        <option>ttcn</option>-->
-        <option>twilight</option>
-        <!-- <option>vibrant-ink</option> -->
-        <!-- <option>xq-dark</option> -->
-        <!-- <option>xq-light</option> -->
-        <!-- <option>yeti</option> -->
-        <!-- <option>yonce</option> -->
-        <!-- <option>zenburn</option> -->
-    </select>
-    <textarea id="edit">
+<select id="lang" onchange="onLanguageChange(this)">
+    <option value="html">HTML</option>
+    <option value="golang">Golang</option>
+    <option value="javascript">Javascript</option>
+    <option value="css">CSS</option>
+    <option value="xml">XML</option>
+    <option value="json">JSON</option>
+    <option value="shell">Shell</option>
+    <option value="markdown">Markdown</option>
+    <option value="python">Python</option>
+    <option value="java">Java</option>
+    <option value="groovy">Groovy</option>
+    <option value="sqlite">SQLite</option>
+    <option value="yaml">YAML</option>
+    <option value="vue">Vue</option>
+</select>
+Theme: <select onchange="onThemeChange(this)" id="customTheme">
+    <option value="default" selected>default</option>
+    <option value="ambiance">ambiance</option>
+    <option value="base16-dark">base16 dark</option>
+    <option value="bespin">bespin</option>
+    <option value="elegant">elegant</option>
+    <option value="gruvbox-dark">gruvbox dark</option>
+    <option value="lesser-dark">lesser dark</option>
+    <option value="material">material</option>
+    <option value="mbo">mbo</option>
+    <option value="monokai">monokai</option>
+    <option value="nord">nord</option>
+    <option value="oceanic-next">oceanic next</option>
+    <option value="pastel-on-dark">pastel on dark</option>
+    <option value="railscasts">railscasts</option>
+    <option value="solarized light">solarized light</option>
+    <option value="tomorrow-night-bright">tomorrow night bright</option>
+    <option value="twilight">twilight</option>
+</select>
+<textarea id="edit">
 </textarea>
-    <table>
-        <tr>
-            <td>
-                <a href="javascript:autoFormatSelection()">
-                    Format
-                </a>
-            </td>
-            <td>
-                <a href="javascript:commentSelection(true)">
-                    Comment
-                </a>
-            </td>
-            <td>
-                <a href="javascript:commentSelection(false)">
-                    Uncomment
-                </a>
-            </td>
-        </tr>
-    </table>
-    <script>
-        const DEFAULT_THEME = "gruvbox-dark";
-        function getCookie(name) {
-            var value = "; " + document.cookie;
-            var parts = value.split("; " + name + "=");
-            if (parts.length === 2) return parts.pop().split(";").shift();
-        }
+<table>
+    <tr>
+        <td>
+            <a class="btn" href="javascript:onAutoFormat()">
+                Format
+            </a>
+        </td>
+        <td>
+            <a class="btn" href="javascript:commentSelection(true)">
+                Comment
+            </a>
+        </td>
+        <td>
+            <a class="btn" href="javascript:commentSelection(false)">
+                Uncomment
+            </a>
+        </td>
+        <td>
+            <a class="btn" href="javascript:clear()">
+                Clear
+            </a>
+        </td>
+    </tr>
+</table>
+<script>
+    const DEFAULT_THEME = "gruvbox-dark";
+    const _THEME = "codemirror_theme";
+    const _LANG = "codemirror_language";
+    const _MODES = {
+        'html': 'text/html',
+        'golang': 'text/x-go',
+        'javascript': 'text/javascript',
+        'css': 'text/css',
+        'xml': 'text/xml',
+        'json': "application/ld+json",
+        'shell': 'text/x-sh',
+        'markdown': 'text/x-markdown',
+        'python': 'text/x-python',
+        'java': 'text/x-java',
+        'groovy': 'text/x-groovy',
+        'sqlite': 'text/x-sqlite',
+        'yaml': 'text/x-yaml',
+        'vue': 'script/x-vue',
+    };
 
-        function setCookie(k, v) {
-            document.cookie =
-                k +
-                "=" +
-                v +
-                ";  expires=" +
-                new Date(2147483647 * 1000).toUTCString() +
-                "; path=/";
-        }
-        var mixedMode = {
-            name: "htmlmixed",
-            scriptTypes: [{
+    var mixedMode = {
+        name: "htmlmixed",
+        scriptTypes: [
+            {
                 matches: /\/x-handlebars-template|\/x-mustache/i,
                 mode: null
             },
             {
                 matches: /(text|application)\/(x-)?vb(a|script)/i,
                 mode: "vbscript"
-            }]
-        };
+            }
+        ]
+    };
 
-        var themeEl = document.getElementById("customTheme");
-        var themeFromUrl = (location.hash && location.hash.slice(1)) || (document.location.search && decodeURIComponent(document.location.search.slice(1)));
-        var savedTheme = themeFromUrl || getCookie("theme") || DEFAULT_THEME;
-        themeEl.value = savedTheme;
+    var themeFromUrl = unescape((location.hash && location.hash.slice(1)) || (document.location.search && decodeURIComponent(document.location.search.slice(1))));
+    var savedTheme = themeFromUrl || localStorage.getItem(_THEME) || DEFAULT_THEME;
+    document.getElementById("customTheme").value = savedTheme;
 
-        var editor = CodeMirror.fromTextArea(document.getElementById('edit'), {
-            lineNumbers: true,
-            mode: mixedMode,
-            matchBrackets: true,
-            styleActiveLine: true,
-            foldGutter: true,
-            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
-            autoCloseBrackets: true,
-            autoCloseTags: true,
-            showHint: true,
-            theme: savedTheme,
-            indentUnit: 4,
-            matchTags: { bothTags: true },
-            hintOptions: {
-                completeSingle: false,
-                closeCharacters: /[\s()\[\]{};:>,]/,
-                alignWithWord: true,
-                closeOnUnfocus: true,
-            },
-            styleSelectedText: true
-        });
+    window.editor = CodeMirror.fromTextArea(document.getElementById('edit'), {
+        lineNumbers: true,
+        mode: mixedMode,
+        matchBrackets: true,
+        styleActiveLine: true,
+        foldGutter: true,
+        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+        autoCloseBrackets: true,
+        autoCloseTags: true,
+        showHint: true,
+        indentUnit: 4,
+        matchTags: {bothTags: true},
+        hintOptions: {
+            completeSingle: false,
+            closeCharacters: /[\s()\[\]{};:>,]/,
+            alignWithWord: true,
+            closeOnUnfocus: true,
+        },
+        styleSelectedText: true
+    });
 
-        editor.setOption("theme", savedTheme);
+    var languageEl = document.getElementById("lang");
+    var savedLang = localStorage.getItem(_LANG);
 
-        CodeMirror.commands["selectAll"](editor);
+    if (savedLang) {
+        languageEl.value = savedLang;
+        onLanguageChange(languageEl);
+    }
 
-        function getSelectedRange() {
-            return { from: editor.getCursor(true), to: editor.getCursor(false) };
+    editor.setOption("theme", savedTheme);
+
+    CodeMirror.commands["selectAll"](editor);
+
+    var lastSavedDoc = localStorage.getItem("lastValue");
+
+    if (lastSavedDoc) {
+        editor.getDoc().setValue(lastSavedDoc);
+    }
+
+    function onAutoFormat() {
+        var selected = editor.getSelection();
+
+        if (!selected) {
+            editor.execCommand('selectAll');
         }
 
-        function autoFormatSelection() {
-            var range = getSelectedRange();
-            editor.autoFormatRange(range.from, range.to);
+        autoFormatSelection();
+    }
+
+    function getSelectedRange() {
+        return {from: editor.getCursor(true), to: editor.getCursor(false)};
+    }
+
+    function autoFormatSelection() {
+        var range = getSelectedRange();
+        editor.autoFormatRange(range.from, range.to);
+    }
+
+    function commentSelection(isComment) {
+        var range = getSelectedRange();
+        editor.commentRange(isComment, range.from, range.to);
+    }
+
+    function onLanguageChange(x) {
+        var optionValue = x.options[x.selectedIndex].value;
+        editor.setOption('mode', _MODES[optionValue]);
+        localStorage.setItem(_LANG, optionValue);
+    }
+
+    function onThemeChange(el) {
+        var selectedTheme = el.options && el.selectedIndex && el.options[el.selectedIndex].value || DEFAULT_THEME;
+        editor.setOption("theme", selectedTheme);
+        location.hash = "#" + selectedTheme;
+        localStorage.setItem(_THEME, selectedTheme);
+    }
+
+    function clear() {
+        editor.setValue("");
+        cm.clearHistory();
+    }
+
+    //CodeMirror.on(window, "hashchange", function () {
+    //    var theme = location.hash.slice(1);
+    //    if (theme) {
+    //        document.getElementById("customTheme").value = theme;
+    //        onThemeChange();
+    //    }
+    // });
+
+    function storeState() {
+        var lastValue = window.editor.getValue();
+        if (lastValue) {
+            localStorage.setItem("lastValue", lastValue);
+        } else {
+            localStorage.setItem("lastValue", "");
         }
+    }
 
-        function commentSelection(isComment) {
-            var range = getSelectedRange();
-            editor.commentRange(isComment, range.from, range.to);
+    window.onbeforeunload = function () {
+        storeState();
+        return "Close?";
+    };
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 's' && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            storeState();
         }
-
-        function select(x) {
-            var optionText = x.options[x.selectedIndex].innerText;
-            var modes = {
-                'Golang': 'text/x-go',
-                'Javascript': 'text/javascript',
-                'CSS': 'text/css',
-                'HTML': 'text/html',
-                'Markdown': 'text/x-markdown',
-                'Python': 'text/x-python',
-                'Java': 'text/x-java',
-                'Groovy': 'text/x-groovy',
-                'SQLite': 'text/x-sqlite',
-                'YAML': 'text/x-yaml',
-            };
-
-            editor.setOption('mode', modes[optionText]);
-        }
-
-        function selectTheme() {
-            var selectedTheme = themeEl.options[themeEl.selectedIndex].textContent;
-            editor.setOption("theme", selectedTheme);
-            location.hash = "#" + selectedTheme;
-            setCookie("theme", selectTheme);
-        }
-
-        CodeMirror.on(window, "hashchange", function () {
-            var theme = location.hash.slice(1);
-            if (theme) { themeEl.value = theme; selectTheme(); }
-        });
-    </script>
+    });
+</script>
 </body>
 
 </html>
