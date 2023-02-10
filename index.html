@@ -340,14 +340,6 @@ Theme: <select onchange="onThemeChange(this)" id="customTheme">
         cm.clearHistory();
     }
 
-    //CodeMirror.on(window, "hashchange", function () {
-    //    var theme = location.hash.slice(1);
-    //    if (theme) {
-    //        document.getElementById("customTheme").value = theme;
-    //        onThemeChange();
-    //    }
-    // });
-
     function storeState() {
         var lastValue = window.editor.getValue();
         if (lastValue) {
